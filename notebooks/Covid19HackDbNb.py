@@ -37,7 +37,7 @@
 dbutils.fs.mount(
 source = "wasbs://outputs@stcovidhackoutput.blob.core.windows.net",
 mount_point = "/mnt/coviddata",
-extra_configs = {"fs.azure.account.key.stcovidhackoutput.blob.core.windows.net":"exnopN56JLbbkuZxx5VLX6sJqH7pop7fWaXEgYgMkt5OY2EtqqppFako7t3wOca7oYUbThKVwmMX4wpv4bwafA=="})
+extra_configs = {"fs.azure.account.key.stcovidhackoutput.blob.core.windows.net":"YOURKEYHERE"})
 
 # COMMAND ----------
 
