@@ -29,21 +29,58 @@
 
 # COMMAND ----------
 
+dbutils.fs.unmount("/mnt/coviddata")
+
+# COMMAND ----------
+
+dbutils.fs.ls("/mnt/")
+
+# COMMAND ----------
+
+
+
+# COMMAND ----------
+
+dbutils.fs.mkdirs("/mnt/coviddata/inputs")
+
+# COMMAND ----------
+
+dbutils.fs.mkdirs("/mnt/coviddata/outputs")
+
+# COMMAND ----------
+
+# MAGIC %md 
+# MAGIC 
+# MAGIC The below cells only work the first time, when the cluster is setup. 
+
+# COMMAND ----------
+
 #dbutils.fs.mount(
 #source = "wasbs://<your-container-name>@<your-storage-account-name>.blob.core.windows.net",
 #mount_point = "/mnt/<mount-name>",
 #extra_configs = {"fs.azure.account.key.<your-storage-account-name>.blob.core.windows.net":"<access-key>"})
 
+
+
 dbutils.fs.mount(
 source = "wasbs://outputs@stcovidhackoutput.blob.core.windows.net",
-mount_point = "/mnt/coviddata",
-extra_configs = {"fs.azure.account.key.stcovidhackoutput.blob.core.windows.net":"YOURKEYHERE"})
+mount_point = "/mnt/coviddata/outputs",
+extra_configs = {"fs.azure.account.key.stcovidhackoutput.blob.core.windows.net":"exnopN56JLbbkuZxx5VLX6sJqH7pop7fWaXEgYgMkt5OY2EtqqppFako7t3wOca7oYUbThKVwmMX4wpv4bwafA=="})
+
+
+
+# COMMAND ----------
+
+dbutils.fs.mount(
+source = "wasbs://inputs@stcovidhackoutput.blob.core.windows.net",
+mount_point = "/mnt/coviddata/inputs",
+extra_configs = {"fs.azure.account.key.stcovidhackoutput.blob.core.windows.net":"exnopN56JLbbkuZxx5VLX6sJqH7pop7fWaXEgYgMkt5OY2EtqqppFako7t3wOca7oYUbThKVwmMX4wpv4bwafA=="})
 
 # COMMAND ----------
 
 # MAGIC %md
 # MAGIC 
-# MAGIC Check for the lastest file names
+# MAGIC Check file structure is setup
 
 # COMMAND ----------
 
@@ -54,12 +91,22 @@ display(dbutils.fs.ls("/mnt/coviddata/"))
 
 # MAGIC %md
 # MAGIC 
+# MAGIC Check all the required files are visible
+
+# COMMAND ----------
+
+display(dbutils.fs.ls("/mnt/coviddata/inputs"))
+
+# COMMAND ----------
+
+# MAGIC %md
+# MAGIC 
 # MAGIC #Wrangle the Doctor Data
 
 # COMMAND ----------
 
-filepath2="/mnt/coviddata/DoctorsGlobal"
-#filepath3=""/mnt/coviddata/LabTechsGlobal""
+filepath2="/mnt/coviddata/inputs/DoctorCountLatest.csv"
+
 
 # COMMAND ----------
 
@@ -155,17 +202,60 @@ doctorlatest.printSchema()
 
 # COMMAND ----------
 
-doctorlatest.write.csv('/mnt/coviddata/DoctorCountLatestYear.csv')
+doctorlatest.write.csv('/mnt/coviddata/outputs/DoctorCountLatestYear')
+
+# COMMAND ----------
+
+# MAGIC %md 
+# MAGIC 
+# MAGIC ###Load the country code data
+
+# COMMAND ----------
+
+filepath3="/mnt/coviddata/inputs/UID_ISO_FIPS_LookUp_Table.csv"
+
+# COMMAND ----------
+
+countrycodes = spark.read.format('csv').options(header='true', inferSchema='true').load(filepath3)
+
+# COMMAND ----------
+
+countrycodes.printSchema()
+
+# COMMAND ----------
+
+countrycodes.show()
+
+# COMMAND ----------
+
+# MAGIC %md 
+# MAGIC 
+# MAGIC ### just want country region and iso3
+
+# COMMAND ----------
+
+countrycodeiso3=countrycodes.select("iso3","Country_Region").distinct()
+
+# COMMAND ----------
+
+countrycodeiso3.filter("iso3='AUS'").show()
+
+# COMMAND ----------
+
+countrycodeiso3.write.csv('/mnt/coviddata/outputs/CountryCodesISO3')
 
 # COMMAND ----------
 
 # MAGIC %md 
 # MAGIC 
 # MAGIC #Wrangle the COVID Data
+# MAGIC 
+# MAGIC ### load the covid data and summarize by country
+# MAGIC ### join the summarized data with the count of doctors and country codes 
 
 # COMMAND ----------
 
-filepath = "/mnt/coviddata/03-29-2020.csv"
+filepath = "/mnt/coviddata/inputs/04-01-2020.csv"
 
 # COMMAND ----------
 
@@ -175,12 +265,70 @@ filepath = "/mnt/coviddata/03-29-2020.csv"
 
 # COMMAND ----------
 
-covidraw = spark.read.format('csv').options(header='true', inferSchema='true').load(filepath) 
+covidraw = spark.read.format('csv').options(header='true', inferSchema='true').load(filepath)
 
 
 # COMMAND ----------
 
 display(covidraw)
+
+# COMMAND ----------
+
+covidlatest=covidraw.select("Country_Region","Confirmed","Deaths","Recovered").groupby("Country_Region").sum("Confirmed","Deaths","Recovered")
+
+# COMMAND ----------
+
+display(covidlatest)
+
+# COMMAND ----------
+
+covidlatest.write.csv('/mnt/coviddata/outputs/CovidLatest')
+
+# COMMAND ----------
+
+doctorlatest.show()
+
+# COMMAND ----------
+
+countrycodeiso3.show()
+
+# COMMAND ----------
+
+from pyspark.sql.functions import col
+doctoriso3=doctorlatest.join(countrycodeiso3,col("COUNTRY")==col("iso3"))
+
+# COMMAND ----------
+
+doctoriso3.select("COUNTRY","YEAR","DoctorsPer10k","Country_Region").filter("COUNTRY = 'AUS'").show()
+
+# COMMAND ----------
+
+coviddoctors = covidlatest.join(doctoriso3, doctoriso3.Country_Region == covidlatest.Country_Region)
+
+# COMMAND ----------
+
+coviddoctors.show()
+
+# COMMAND ----------
+
+coviddoctorselect = coviddoctors.select(covidlatest.Country_Region,"sum(Confirmed)","sum(Deaths)","sum(Recovered)","COUNTRY","YEAR","DoctorsPer10k")
+
+# COMMAND ----------
+
+coviddoctorfinal=coviddoctorselect\
+.withColumnRenamed('sum(Confirmed)','Confirmed')\
+.withColumnRenamed('sum(Deaths)','Deaths')\
+.withColumnRenamed('sum(Recovered)','Recovered')\
+.withColumnRenamed('COUNTRY','Iso3')\
+.withColumnRenamed('YEAR','YearOfDoctorCount')
+
+# COMMAND ----------
+
+coviddoctorfinal.printSchema()
+
+# COMMAND ----------
+
+coviddoctorfinal.write.csv('/mnt/coviddata/outputs/CovidDoctorCombined')
 
 # COMMAND ----------
 
