@@ -78,6 +78,11 @@ extra_configs = {"fs.azure.account.key.stcovidhackoutput.blob.core.windows.net":
 
 # COMMAND ----------
 
+# MAGIC %md 
+# MAGIC # Start here if the Lake has been previously mounted to this cluster
+
+# COMMAND ----------
+
 # MAGIC %md
 # MAGIC 
 # MAGIC Check file structure is setup
@@ -202,7 +207,7 @@ doctorlatest.printSchema()
 
 # COMMAND ----------
 
-doctorlatest.write.csv('/mnt/coviddata/outputs/DoctorCountLatestYear')
+doctorlatest.write.option("header","true").csv('/mnt/coviddata/outputs/DoctorCountLatestYear')
 
 # COMMAND ----------
 
@@ -328,7 +333,41 @@ coviddoctorfinal.printSchema()
 
 # COMMAND ----------
 
-coviddoctorfinal.write.csv('/mnt/coviddata/outputs/CovidDoctorCombined')
+coviddoctorfinal.write.option("header", "true").mode('overwrite').csv('/mnt/coviddata/outputs/CovidDoctorCombined')
+
+# COMMAND ----------
+
+# MAGIC %md 
+# MAGIC 
+# MAGIC ### for the data factory to correctly copy these shards to Synapse, we need to remove any unneeded files from the output directory
+
+# COMMAND ----------
+
+display(dbutils.fs.ls('/mnt/coviddata/outputs/CovidDoctorCombined'))
+
+# COMMAND ----------
+
+#dbutils.fs.mkdirs("/mnt/coviddata/outputs/final")
+
+# COMMAND ----------
+
+# MAGIC %md 
+# MAGIC 
+# MAGIC ### for the data factory to correctly copy these shards to Synapse, we need to remove any unneeded files from the output directory. Since trying to find files that begin with "_" seem to throw java, we will look for all the .csv files and move them to a clean directory and then point the factory to that as the source
+
+# COMMAND ----------
+
+# MAGIC %scala
+# MAGIC 
+# MAGIC val fileprefix= "/mnt/coviddata/outputs/final/"
+# MAGIC 
+# MAGIC val partition_path = dbutils.fs.ls("/mnt/coviddata/outputs/CovidDoctorCombined").filter(file=>file.name.endsWith("csv"))//(0).path
+# MAGIC  
+# MAGIC partition_path.foreach { file => dbutils.fs.cp(file.path,fileprefix+file.name)}
+
+# COMMAND ----------
+
+display(dbutils.fs.ls('/mnt/coviddata/outputs/final/'))
 
 # COMMAND ----------
 
