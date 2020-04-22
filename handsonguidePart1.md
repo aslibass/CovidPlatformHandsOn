@@ -1,6 +1,9 @@
+---
+title: Hands On Lab MODULE I: DATA INGESTION
+---
 Hands On Lab
 
-MODULE I: DATA INGESTION
+
 
 **MODULE 1:**
 
@@ -288,3 +291,6 @@ Monitor the Pipeline
 5.  You can switch back to the **Pipeline runs** view from
     the **Activity runs** view by selecting the **All pipeline
     runs** link.
+---
+author: Prerita Mehta, Viren Joseph
+---
