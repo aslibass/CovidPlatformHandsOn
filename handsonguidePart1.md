@@ -1,9 +1,4 @@
----
-title: Hands On Lab MODULE I: DATA INGESTION
----
-Hands On Lab
-
-
+**Hands On Lab MODULE I: DATA INGESTION**
 
 **MODULE 1:**
 
