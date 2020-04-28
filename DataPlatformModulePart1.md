@@ -50,11 +50,9 @@ generated](media1/media/image4.png)
 
 6.  One of the datasets we are going to be working with can be found
     here:
-    <https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv>
+    <https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/UID_ISO_FIPS_LookUp_Table.csv>
 
 Click the ‘**raw’** button to see this file in csv format.
-
-![](media1/media/image7.png)
 
 ![](media1/media/image8.png)
 
