@@ -54,7 +54,9 @@ generated](media1/media/image4.png)
 
 Click the ‘**raw’** button to see this file in csv format.
 
-![](media1/media/image8.png)
+
+
+
 
 7.  Next up, we’re going to **create a new source**. Click on the
     **source tab** and select the **(+)** button to **add a new
