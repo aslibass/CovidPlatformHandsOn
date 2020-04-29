@@ -85,7 +85,7 @@ Click the ‘**raw’** button to see this file in csv format.
 
 13. **Name** the linked service to ‘HTTP\<Name\>Github
 
-14. **Copy** the **base URL** of the raw Github csv file as shown below
+14. **Copy** the **base URL (INCLUDING THE FINAL "/")** of the raw Github csv file as shown below
 
 15. Set **Authentication** type to **Anonymous**
 
