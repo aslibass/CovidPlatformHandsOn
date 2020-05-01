@@ -47,3 +47,6 @@ Finally, we create a dashboard that visualizes the data in the data warehouse.
 
 * A video and hands on guide will be posted here shortly. 
 
+---
+author: Prerita Mehta, Viren Joseph, Microsoft Technology Center, Sydney.
+---
