@@ -2,7 +2,7 @@ Hands On Lab
 
 MODULE III: DATA ANALYSIS
 
-**MODULE 3:**
+**MODULE 4:**
 
 Data Analysis with Power BI
 
