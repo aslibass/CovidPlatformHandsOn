@@ -35,6 +35,7 @@ You can download this [video tutorial for Module 3](https://1drv.ms/v/s!AvknNlaP
 
 Finally, we create a dashboard that visualizes the data in the data warehouse.
 You can use this [Module 4 Hands On Guide](https://github.com/aslibass/CovidPlatformHandsOn/blob/master/DataPlatformModule4.md) to do so.
+Additionally, you can also use this [video tutorial for Module 4](https://1drv.ms/v/s!AvknNlaPoEMyj1M_WQP8HMGGHq-M?e=hph3cH)
 
 ## Module 5: Creating a full data pipeline that automates all the work done above.
 A video and hands on guide will be posted here shortly. 
