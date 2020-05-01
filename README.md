@@ -2,7 +2,7 @@
 # CovidPlatformHandsOn
 Welcome to the github repo for the MTC Sydney Virtual Hands On Workshop where you use Azure Data Factory, Azure Data Lake Storage, Databricks, Synapse and Power BI together to analyse the latest COVID-19 data while also building the automated data pipelines required for the analysis. The workshop has 5 modules. 
 
-This series of exercises seeks to answer the question "does the number of doctors in a country affect the number of COVID-19 cases? To do this we join the latest covid-19 stats, with statistics from the GHO. The process is outlined below. 
+This series of exercises seeks to answer the question *does the number of doctors in a country affect the number of COVID-19 cases?* To do this we join the latest covid-19 stats, with statistics from the GHO. The process is outlined below. 
 
 
 ## Module 1: Ingesting external data into a data lake with Azure Data Factory Data Pipelines.
