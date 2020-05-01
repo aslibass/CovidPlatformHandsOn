@@ -35,7 +35,9 @@ In this module, you create a data pipeline that copys the final dataset from Mod
 * You can download this [video tutorial for Module 3](https://1drv.ms/v/s!AvknNlaPoEMyj1L8nyzEdag_ggu_?e=mfZDfh) for your guidance.
 
 ## Module 4: Creating visualizations on the warehouse data using Power BI
-![PowerBIDashboardSample](/media/2020-04-23 13_55_15-CovidHandsOnWorkshop - Power BI and 4 more pages - Work - Microsoft​ Edge.png)
+
+![PowerBIDashboardSample](/media/2020-04-23%2013_55_15-CovidHandsOnWorkshop%20-%20Power%20BI%20and%204%20more%20pages%20-%20Work%20-%20Microsoft%E2%80%8B%20Edge.png)
+
 Finally, we create a dashboard that visualizes the data in the data warehouse.
 
 * You can use this [Module 4 Hands On Guide](https://github.com/aslibass/CovidPlatformHandsOn/blob/master/DataPlatformModule4.md) to do so.
