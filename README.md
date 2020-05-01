@@ -6,16 +6,16 @@ This series of exercises seeks to answer the question "does the number of doctor
 
 ## Module 1: Ingesting external data into a data lake with Azure Data Factory Data Pipelines.
 
-**Part 1: Copying country codes data to the lake 
+**Part 1: Copying country codes data to the lake.**
 
 * You can use this [Module 1 Part 1 Hands On Guide](https://github.com/aslibass/CovidPlatformHandsOn/blob/master/DataPlatformModulePart1.md)
 
-**Part 2: Copying the latest COVID-19 data from the John Hopkins github repo to the lake.
+**Part 2: Copying the latest COVID-19 data from the John Hopkins github repo to the lake.**
 
 * You can use this [Module 1 Part 2 Hands On Guide](https://github.com/aslibass/CovidPlatformHandsOn/blob/master/DataPlatformModulePart2.md)
 * Additionally, you can also download this [video tutorial for part 2](https://1drv.ms/v/s!AvknNlaPoEMyj1E_bDj7oXuHWNGP?e=EaIMP9)
 
-**Part 3: Copy GHO data to the lake.
+**Part 3: Copy GHO data to the lake.**
 
 * You can use this [Module 1 Part 3 Hands On Guide](https://github.com/aslibass/CovidPlatformHandsOn/blob/master/DataPlatformModulePart3.md)
 * Additionally, you can also download this [video tutorial for part 3](https://1drv.ms/v/s!AvknNlaPoEMyj1BmBjpfFvCnFME_?e=F1ap7a)
