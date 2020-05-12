@@ -9,19 +9,27 @@ This series of exercises seeks to answer the question *does the number of doctor
 
 **Part 1: Copying country codes data to the lake.**
 
-* You can use this [Module 1 Part 1 Hands On Guide](https://github.com/aslibass/CovidPlatformHandsOn/blob/master/DataPlatformModulePart1.md)
-* Additionally, you can also download this [video tutorial for part 1](https://1drv.ms/u/s!AvknNlaPoEMyj1al-3retQaZKz3K?e=U0uwIo)
+<!-- * You can use this [Module 1 Part 1 Hands On Guide](https://github.com/aslibass/CovidPlatformHandsOn/blob/master/DataPlatformModulePart1.md)
+*  Additionally, you can also download this [video tutorial for part 1](https://1drv.ms/u/s!AvknNlaPoEMyj1al-3retQaZKz3K?e=U0uwIo) 
+-->
+* Download this [video tutorial for part 1](https://1drv.ms/u/s!AvknNlaPoEMyj1al-3retQaZKz3K?e=U0uwIo) 
+* The source file for the data can be found [here](https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data)
 
 **Part 2: Copying the latest COVID-19 data from the John Hopkins github repo to the lake.**
 
-* You can use this [Module 1 Part 2 Hands On Guide](https://github.com/aslibass/CovidPlatformHandsOn/blob/master/DataPlatformModulePart2.md)
+<!--* You can use this [Module 1 Part 2 Hands On Guide](https://github.com/aslibass/CovidPlatformHandsOn/blob/master/DataPlatformModulePart2.md)
 * Additionally, you can also download this [video tutorial for part 2](https://1drv.ms/v/s!AvknNlaPoEMyj1E_bDj7oXuHWNGP?e=EaIMP9)
+-->
+* Download this [video tutorial for part 2](https://1drv.ms/v/s!AvknNlaPoEMyj1E_bDj7oXuHWNGP?e=EaIMP9)
+* The source file for the data can be found [here](https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports)
 
 **Part 3: Copy GHO data to the lake.**
 
-* You can use this [Module 1 Part 3 Hands On Guide](https://github.com/aslibass/CovidPlatformHandsOn/blob/master/DataPlatformModulePart3.md)
+<!-- * You can use this [Module 1 Part 3 Hands On Guide](https://github.com/aslibass/CovidPlatformHandsOn/blob/master/DataPlatformModulePart3.md)
 * Additionally, you can also download this [video tutorial for part 3](https://1drv.ms/v/s!AvknNlaPoEMyj1BmBjpfFvCnFME_?e=F1ap7a)
-
+-->
+* Download this [video tutorial for part 3](https://1drv.ms/v/s!AvknNlaPoEMyj1BmBjpfFvCnFME_?e=F1ap7a)
+* The service URL for the API is [https://ghoapi.azureedge.net/api](https://ghoapi.azureedge.net/api). You will need this when you create your OData connection.
 
 ## Module 2: Wrangling the data with an open source distributed computing framework, in this case, Databricks.
 
