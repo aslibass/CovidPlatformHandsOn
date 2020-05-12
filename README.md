@@ -10,6 +10,7 @@ This series of exercises seeks to answer the question *does the number of doctor
 **Part 1: Copying country codes data to the lake.**
 
 * You can use this [Module 1 Part 1 Hands On Guide](https://github.com/aslibass/CovidPlatformHandsOn/blob/master/DataPlatformModulePart1.md)
+* Additionally, you can also download this [video tutorial for part 1](https://1drv.ms/u/s!AvknNlaPoEMyj1al-3retQaZKz3K?e=U0uwIo)
 
 **Part 2: Copying the latest COVID-19 data from the John Hopkins github repo to the lake.**
 
