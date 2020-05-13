@@ -30,6 +30,7 @@ This series of exercises seeks to answer the question *does the number of doctor
 <!-- * You can use this [Module 1 Part 3 Hands On Guide](https://github.com/aslibass/CovidPlatformHandsOn/blob/master/DataPlatformModulePart3.md)
 * Additionally, you can also download this [video tutorial for part 3](https://1drv.ms/v/s!AvknNlaPoEMyj1BmBjpfFvCnFME_?e=F1ap7a)
 -->
+* You can use this [Module 1 Part 3 Hands On Guide](https://github.com/aslibass/CovidPlatformHandsOn/blob/master/DataPlatformModulePart3.md)
 * Download this [video tutorial for part 3](https://1drv.ms/v/s!AvknNlaPoEMyj1BmBjpfFvCnFME_?e=F1ap7a)
 * The service URL for the API is [https://ghoapi.azureedge.net/api](https://ghoapi.azureedge.net/api). You will need this when you create your OData connection.
 
