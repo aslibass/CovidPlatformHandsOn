@@ -21,6 +21,7 @@ This series of exercises seeks to answer the question *does the number of doctor
 <!--* You can use this [Module 1 Part 2 Hands On Guide](https://github.com/aslibass/CovidPlatformHandsOn/blob/master/DataPlatformModulePart2.md)
 * Additionally, you can also download this [video tutorial for part 2](https://1drv.ms/v/s!AvknNlaPoEMyj1E_bDj7oXuHWNGP?e=EaIMP9)
 -->
+* You can use this [Module 1 Part 2 Hands On Guide](https://github.com/aslibass/CovidPlatformHandsOn/blob/master/DataPlatformModule1Part2.md)
 * Download this [video tutorial for part 2](https://1drv.ms/v/s!AvknNlaPoEMyj1E_bDj7oXuHWNGP?e=EaIMP9)
 * The source file for the data can be found [here](https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports)
 
