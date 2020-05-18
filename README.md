@@ -21,7 +21,8 @@ This series of exercises seeks to answer the question *does the number of doctor
 <!--* You can use this [Module 1 Part 2 Hands On Guide](https://github.com/aslibass/CovidPlatformHandsOn/blob/master/DataPlatformModulePart2.md)
 * Additionally, you can also download this [video tutorial for part 2](https://1drv.ms/v/s!AvknNlaPoEMyj1E_bDj7oXuHWNGP?e=EaIMP9)
 -->
-* You can use this [Module 1 Part 2 Hands On Guide](https://github.com/aslibass/CovidPlatformHandsOn/blob/master/DataPlatformModule1Part2.md)
+* You can use this [Module 1 Part 2 Hands On Guide](https://github.com/aslibass/CovidPlatformHandsOn/blob/master/DataPlatformModule1Part2(1).md)
+* You can use this [Module 1 Part 2 (Extension) Hands On Guide](https://github.com/aslibass/CovidPlatformHandsOn/blob/master/DataPlatformModule1Part2.md)
 * Download this [video tutorial for part 2](https://1drv.ms/v/s!AvknNlaPoEMyj1E_bDj7oXuHWNGP?e=EaIMP9)
 * The source file for the data can be found [here](https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports)
 
@@ -30,7 +31,7 @@ This series of exercises seeks to answer the question *does the number of doctor
 <!-- * You can use this [Module 1 Part 3 Hands On Guide](https://github.com/aslibass/CovidPlatformHandsOn/blob/master/DataPlatformModulePart3.md)
 * Additionally, you can also download this [video tutorial for part 3](https://1drv.ms/v/s!AvknNlaPoEMyj1BmBjpfFvCnFME_?e=F1ap7a)
 -->
-* You can use this [Module 1 Part 3 Hands On Guide](https://github.com/aslibass/CovidPlatformHandsOn/blob/master/DataPlatformModulePart3.md)
+* You can use this [Module 1 Part 3 Hands On Guide](https://github.com/aslibass/CovidPlatformHandsOn/blob/master/DataPlatformModulePart3.md)    
 * Download this [video tutorial for part 3](https://1drv.ms/v/s!AvknNlaPoEMyj1BmBjpfFvCnFME_?e=F1ap7a)
 * The service URL for the API is [https://ghoapi.azureedge.net/api](https://ghoapi.azureedge.net/api). You will need this when you create your OData connection.
 
@@ -52,8 +53,8 @@ In this module, you create a data pipeline that copys the final dataset from Mod
 
 Finally, we create a dashboard that visualizes the data in the data warehouse.
 
-* You can use this [Module 4 Hands On Guide](https://github.com/aslibass/CovidPlatformHandsOn/blob/master/DataPlatformModule4.md) to do so.
-* Additionally, you can also download this [video tutorial for Module 4](https://1drv.ms/v/s!AvknNlaPoEMyj1M_WQP8HMGGHq-M?e=hph3cH)
+* You can use this [Module 4 Hands On Guide](https://github.com/aslibass/CovidPlatformHandsOn/blob/master/DataPlatformsModule3.md) to do so.
+* Additionally, you can also download this [video tutorial for Module 4](https://1drv.ms/v/s!At9MwgSee_b7akmQFrsG2glqEpA?e=cLZzKi)
 
 ## Module 5: Creating a full data pipeline that automates all the work done above.
 
